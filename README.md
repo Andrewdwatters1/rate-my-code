@@ -1,3 +1,39 @@
+Codewars API: https://dev.codewars.com/#api-reference
+
+React-Highlight: https://www.npmjs.com/package/react-highlight
+
+MVP: 
+1) Submit: 
+  a) Users can submit their problem, any explination and explain the requirements
+  b) Users submit their solution
+  c) Users have the ability to add tests and then run their code against those tests
+  d) should be able to add language/category to filter results
+
+2) Rate
+  a) Users can view questions in target language/category
+  b) Can view others' solutions and rate them 1-5 stars
+  c) "Explain why you gave {author} {n stars} for their problem {problem name}"... user can provide feedback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
