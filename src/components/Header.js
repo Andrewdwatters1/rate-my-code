@@ -12,7 +12,7 @@ class Header extends Component {
   render() {
     return (
       <div style={{ height: '85px', backgroundColor: '#FFF', width: '100vw', textAlign: 'center', color: 'red', margin: '-20px auto 0 auto' }}>
-        <h1>RATE MY CODE </h1>
+        <h1>RATE THE SOLUTION </h1>
         <a href="/#/"><button style={{ margin: '-20px auto 10px auto' }}>HOME</button></a>
       </div>
     )

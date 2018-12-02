@@ -1,16 +1,23 @@
 .App {
   text-align: center;
 }
+
 button {
   border-radius: 5px;
   min-width: 200px;
   height: 30px;
   font-size: 1.3em;
 }
+
 button:hover {
   cursor: pointer;
   opacity: .8
 }
+
+.home-main * {
+  margin: 75px;
+}
+
 .submit {
   display: flex;
   flex-direction: column;
@@ -30,6 +37,7 @@ button:hover {
   font-size: 1.1em;
   box-sizing: border-box;
 }
+
 .submit-problem select {
   width: 86vw;
   margin: 0 auto 0 7vw;
@@ -45,11 +53,21 @@ button:hover {
   width: 86vw;
   text-align: left;
   margin: 0 auto;
-  background-color: #333 !important;
-  color: white !important;
   font-weight: bold;
   box-sizing: border-box;
 }
+
+.submit-code-dark {
+  height: 40vh;
+  width: 86vw;
+  text-align: left;
+  margin: 0 auto;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: #333 !important;
+  color: white !important;
+}
+
 .submit-rating {
   margin: 0 auto;
   font-size: 2em;

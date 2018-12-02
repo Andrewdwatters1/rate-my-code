@@ -13,12 +13,13 @@ export default class Submit extends Component {
       styles: [agate, androidstudio, arduinoLight, arta, ascetic, atelierCaveDark, atelierCaveLight, atelierDuneDark, atelierDuneLight, atelierEstuaryDark, atelierEstuaryLight, atelierForestDark, atelierForestLight, atelierHeathDark, atelierHeathLight, atelierLakesideDark, atelierLakesideLight, atelierPlateauDark, atelierPlateauLight, atelierSavannaDark, atelierSavannaLight, atelierSeasideDark, atelierSeasideLight, atelierSulphurpoolDark, atelierSulphurpoolLight, atomOneDark, atomOneLight, brownPaper, codepenEmbed, colorBrewer, darcula, dark, darkula, defaultStyle, docco, dracula, far, foundation, githubGist, github, googlecode, grayscale, gruvboxDark, gruvboxLight, hopscotch, hybrid, idea, irBlack, kimbieDark, kimbieLight, magula, monoBlue, monokaiSublime, monokai, obsidian, ocean, paraisoDark, paraisoLight, pojoaque, purebasic, qtcreatorDark, qtcreatorLight, railscasts, rainbow, routeros, schoolBook, solarizedDark, solarizedLight, sunburst, tomorrowNightBlue, tomorrowNightBright, tomorrowNightEighties, tomorrowNight, tomorrow, vs, vs2015, xcode, xt256, zenburndarcula],
       stylesNames: ['agate', 'androidstudio', 'arduinoLight', 'arta', 'ascetic', 'atelierCaveDark', 'atelierCaveLight', 'atelierDuneDark', 'atelierDuneLight', 'atelierEstuaryDark', 'atelierEstuaryLight', 'atelierForestDark', 'atelierForestLight', 'atelierHeathDark', 'atelierHeathLight', 'atelierLakesideDark', 'atelierLakesideLight', 'atelierPlateauDark', 'atelierPlateauLight', 'atelierSavannaDark', 'atelierSavannaLight', 'atelierSeasideDark', 'atelierSeasideLight', 'atelierSulphurpoolDark', 'atelierSulphurpoolLight', 'atomOneDark', 'atomOneLight', 'brownPaper', 'codepenEmbed', 'colorBrewer', 'darcula', 'dark', 'darkula', 'defaultStyle', 'docco', 'dracula', 'far', 'foundation', 'githubGist', 'github', 'googlecode', 'grayscale', 'gruvboxDark', 'gruvboxLight', 'hopscotch', 'hybrid', 'idea', 'irBlack', 'kimbieDark', 'kimbieLight', 'magula', 'monoBlue', 'monokaiSublime', 'monokai', 'obsidian', 'ocean', 'paraisoDark', 'paraisoLight', 'pojoaque', 'purebasic', 'qtcreatorDark', 'qtcreatorLight', 'railscasts', 'rainbow', 'routeros', 'schoolBook', 'solarizedDark', 'solarizedLight', 'sunburst', 'tomorrowNightBlue', 'tomorrowNightBright', 'tomorrowNightEighties', 'tomorrowNight', 'tomorrow', 'vs', 'vs2015', 'xcode', 'xt256', 'zenburndarcula'],
       style: docco,
+      darkTheme: false,
       rating: 4, // comes from aggregated rating
     }
   }
 
   setTargetInput = (e) => {
-    if (e.target.classList.contains('submit-code')) {
+    if (e.target.classList.contains('submit-code') || e.target.classList.contains('submit-code-dark')) {
       this.setState({
         targetInputText: e.target.innerText
       })
@@ -76,8 +77,6 @@ export default class Submit extends Component {
   }
 
   render() {
-    console.log(this.state.styles[0])
-    console.log(this.state)
     return (
       <div className="submit">
 
@@ -111,16 +110,13 @@ export default class Submit extends Component {
           <SyntaxHighlighter
             language={this.state.language}
             onClick={this.setTargetInput}
-            // showLineNumbers={true}
-            // startingLineNumber={1}
-            // onPaste={this.handlePaste}
             wrapLines={true}
             style={this.state.style}
-            children={<input value={3} />}
-            className="submit-code">
+            className={this.state.darkTheme ? "submit-code" : "submit-code-dark"}>
 
             {this.state.targetInputText}
           </SyntaxHighlighter>
+          <input type="checkbox" checked={this.state.darkTheme} onChange={() => this.setState({ darkTheme: !this.state.darkTheme })} />
         </div>
 
         <div className="submit-rating">
